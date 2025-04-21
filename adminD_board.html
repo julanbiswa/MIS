@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel | ConstructHub</title>
+  <link rel="stylesheet" href="admin.css" />
+  <script src="admin.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="admin-header">
+    <h1>ConstructHub Admin Panel</h1>
+    <nav>
+      <a href="#machinery">Machinery</a>
+      <a href="#vlogs">Vlogs</a>
+      <a href="#payments">Payments</a>
+      <a href="#messages">Messages</a>
+    </nav>
+  </header>
+
+  <main class="admin-container">
+    <!-- Machinery Section -->
+    <section id="machinery" class="admin-section">
+      <h2>Manage Machinery</h2>
+      <form id="machineryForm">
+        <input type="text" placeholder="Name" required>
+        <input type="url" placeholder="Image URL" required>
+        <textarea placeholder="Description" required></textarea>
+        <select required>
+          <option value="available">Available</option>
+          <option value="not-available">Not Available</option>
+        </select>
+        <input type="number" placeholder="Price Per Day" required>
+        <!-- <input type="number" step="0.1" max="5" placeholder="Rating" required> -->
+        <button type="submit"><i class="fas fa-plus"></i> Add Machinery</button>
+      </form>
+
+      <div id="machineryList" class="entry-list"></div>
+    </section>
+
+    <!-- Vlog Section -->
+    <section id="vlogs" class="admin-section">
+      <h2>Manage Vlogs</h2>
+      <form id="vlogForm">
+        <input type="text" placeholder="Title" required>
+        <input type="url" placeholder="YouTube Embed Link" required>
+        <textarea placeholder="Description" required></textarea>
+        <button type="submit"><i class="fas fa-video"></i> Add Vlog</button>
+      </form>
+
+      <div id="vlogList" class="entry-list"></div>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payments" class="admin-section">
+      <h2>Payment Tracking</h2>
+      <table class="payment-table">
+        <thead>
+          <tr><th>Transaction ID</th><th>User</th><th>Amount</th><th>Date</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>#TX1001</td><td>user1@example.com</td><td>₹1500</td><td>2025-04-16</td><td>Completed</td></tr>
+          <tr><td>#TX1002</td><td>user2@example.com</td><td>₹3200</td><td>2025-04-15</td><td>Pending</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Messages Section -->
+    <section id="messages" class="admin-section">
+      <h2>Customer Messages</h2>
+      <div class="message-box">
+        <p><strong>user1@example.com</strong>: I need a roller tomorrow. Is it available?</p>
+        <p><strong>support@constructhub.com</strong>: Replied ✔️</p>
+      </div>
+      <div class="message-box">
+        <p><strong>user2@example.com</strong>: Having issues with my payment.</p>
+        <p><em>Waiting for reply...</em></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
